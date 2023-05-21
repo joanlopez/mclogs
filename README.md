@@ -2,7 +2,7 @@
 
 [![go report card](https://goreportcard.com/badge/github.com/joanlopez/mclogs)](https://goreportcard.com/report/github.com/joanlopez/mclogs)  [![docker download](https://img.shields.io/docker/pulls/joanlopez/mclogs.svg)](https://hub.docker.com/r/joanlopez/mclogs)
 
-mclogs is a fake log generator, heavily inspired on [flog](github.com/mingrammer/flog) ❤️, with a wink to [McDonald's](https://mcdonalds.es/), and support for common log formats json and logfmt.
+mclogs is a fake log generator, heavily inspired on [flog](https://github.com/mingrammer/flog) ❤️, with a wink to [McDonald's](https://mcdonalds.com/), and support for common log formats json and logfmt.
 
 It is useful for testing some tasks which require log data like amazon kinesis log stream test.
 
@@ -20,7 +20,7 @@ go get -u github.com/joanlopez/mclogs
 
 Download gzip file from [Github Releases](https://github.com/joanlopez/mclogs/releases/latest) according to your OS. Then, copy the unzipped executable to under system path.
 
-### Using [docker](https://www.docker.com)
+### Using [Docker](https://www.docker.com)
 
 ```
 docker run -it --rm joanlopez/mclogs
