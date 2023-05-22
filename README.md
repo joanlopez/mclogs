@@ -25,7 +25,7 @@ Download gzip file from [Github Releases](https://github.com/joanlopez/mclogs/re
 ### Using [Docker](https://www.docker.com)
 
 ```
-docker run -it --rm joanlopez/mclogs
+docker run -it --rm ghcr.io/joanlopez/mclogs
 ```
 
 ## Usage

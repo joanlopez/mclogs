@@ -6,7 +6,7 @@ ENV GO111MODULE=on
 WORKDIR /go/src/mclogs
 
 COPY . ./
-RUN go build -o /bin/mclogs cmd/mclogs/*.go
+RUN go build -o /bin/mclogs cmd/mclogs/main.go
 
 FROM scratch
 COPY --from=0 /bin/mclogs /bin/mclogs

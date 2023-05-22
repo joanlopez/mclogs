@@ -1,12 +1,11 @@
 package main
 
 import (
-	"github.com/joanlopez/mclogs"
+	"github.com/joanlopez/mclogs/cmd/mclogs/bootstrap"
 )
 
 func main() {
-	cfg := configFromFlags()
-	if err := mclogs.Run(cfg); err != nil {
+	if err := bootstrap.Run(); err != nil {
 		panic(err)
 	}
 }

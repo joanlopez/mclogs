@@ -1,7 +1,7 @@
 project_name: mclogs
 
 builds:
-  - main: ./cmd/mclogs/*.go
+  - main: ./cmd/mclogs
     goos:
       - darwin
       - linux
