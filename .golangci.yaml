@@ -1,0 +1,44 @@
+linters:
+  disable-all: true
+  enable:
+    - errcheck # Check for unchecked errors.
+    - gosimple # Suggest code simplifications.
+    - govet # Detect suspicious constructs.
+    - ineffassign # Detect ineffectual assignments.
+    - staticcheck # Static analysis, including unused code.
+    - typecheck # Like the front-end of a Go compiler.
+    - bodyclose # Check for unclosed response bodies.
+    - durationcheck # Check for two durations multiplied together.
+    - errname # Check that sentinel errors are prefixed correctly.
+    - exportloopref # Check for pointers to enclosing loop variables.
+    - forcetypeassert # Find forced type assertions.
+    - gci # Enforce Go code import order and make it automatic.
+    - gocritic # Provides diagnostics that check for bugs, performance and style issues.
+    - godot # Check if comments end in a period.
+    - gofumpt #	Check whether code was gofumpt-ed.
+    - gosec # Inspect source code for security problems.
+    - misspell # Find commonly misspelled English words in comments.
+    - noctx # Find sending http request without context.Context.
+    - nolintlint # Report ill-formed or insufficient nolint directives.
+    - paralleltest # Detect missing usage of t.Parallel() method in your Go test.
+    - prealloc # Find slice declarations that could potentially be pre-allocated.
+    - revive # Fast, configurable, extensible, flexible, and beautiful linter for Go.
+    - thelper # Detect helpers without t.Helper() call and checks their consistency.
+    - tparallel	# Detects inappropriate usage of t.Parallel() method.
+    - unconvert # Remove unnecessary type conversions.
+    - unparam # Report unused function parameters.
+    - unused # Detect unused code.
+    - usestdlibvars # Detect the possibility to use variables/constants from the stdlib.
+
+linters-settings:
+  gci:
+    sections:
+      - standard
+      - default
+      - prefix(github.com/joanlopez/gitage)
+
+    # Skip generated files.
+    skip-generated: false
+
+    # Make the section order the same as the order of `sections`.
+    custom-order: true
