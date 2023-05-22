@@ -50,5 +50,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${GITHUB_REPOSITORY}:latest
-            ghcr.io/${GITHUB_REPOSITORY}:${IMAGE_TAG}
+            ghcr.io/${{ github.repository }}:latest
+            ghcr.io/${{ github.repository }}:${IMAGE_TAG}
