@@ -11,7 +11,7 @@ func Run(cfg Config) error {
 	// If output is specified, prepare the file system
 	// Otherwise, use stdout as output for the logs.
 	if len(cfg.Output) > 0 {
-		logDir := filepath.Dir(cfg.Output)
+		logsDir := filepath.Dir(cfg.Output)
 
 		if err := os.MkdirAll(logsDir, 0766); err != nil {
 			return err

@@ -28,7 +28,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   docker:
-    needs: release
+    needs: goreleaser
     name: Publish Docker image
     runs-on: ubuntu-latest
     steps:
