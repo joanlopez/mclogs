@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-// Generate generates the logs with given configuration
+// Generate generates the logs with given configuration.
 func Generate(cfg Config) error {
 	writer, err := newWriter(cfg.Output)
 	if err != nil {
@@ -68,7 +68,7 @@ func generateLoop(cfg Config, writer io.WriteCloser) {
 	}
 }
 
-// NewLog creates a log for given format
+// NewLog creates a log for given format.
 func NewLog(format Format, at time.Time) string {
 	return NewEvent(at).Format(format)
 }

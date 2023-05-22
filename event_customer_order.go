@@ -26,7 +26,7 @@ func NewCustomerOrder(at time.Time) Event {
 func (co CustomerOrder) Format(f Format) string {
 	var log string
 	switch f {
-	case FormatJson:
+	case FormatJSON:
 		log = `{"at": "%s", "name": "%s", "has_account": %t, "total_amount": %.2f, "event": "%s"}`
 	case FormatLogfmt:
 		log = `at=%s name="%s" has_account=%t total_amount=%.2f event="%s"`

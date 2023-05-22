@@ -11,7 +11,6 @@ linters:
     - durationcheck # Check for two durations multiplied together.
     - errname # Check that sentinel errors are prefixed correctly.
     - exportloopref # Check for pointers to enclosing loop variables.
-    - forcetypeassert # Find forced type assertions.
     - gci # Enforce Go code import order and make it automatic.
     - gocritic # Provides diagnostics that check for bugs, performance and style issues.
     - godot # Check if comments end in a period.

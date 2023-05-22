@@ -2,9 +2,9 @@ package mclogs
 
 import (
 	"fmt"
-	"github.com/brianvoe/gofakeit"
 	"time"
 
+	"github.com/brianvoe/gofakeit"
 	"github.com/mroth/weightedrand"
 )
 
@@ -53,7 +53,7 @@ func NewCustomerSatisfaction(at time.Time) Event {
 func (cs CustomerSatisfaction) Format(f Format) string {
 	var log string
 	switch f {
-	case FormatJson:
+	case FormatJSON:
 		log = `{"at": "%s", "name": "%s", "has_account": %t, "satisfaction_level": %d, "event": "%s"}`
 	case FormatLogfmt:
 		log = `at=%s name="%s" has_account=%t satisfaction_level=%d event="%s"`

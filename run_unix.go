@@ -10,7 +10,7 @@ import (
 	"syscall"
 )
 
-// Run checks overwrite flag and generates logs with given configuration
+// Run checks overwrite flag and generates logs with given configuration.
 func Run(cfg Config) error {
 	// If output is specified, prepare the file system
 	// Otherwise, use stdout as output for the logs.
@@ -30,8 +30,8 @@ func Run(cfg Config) error {
 }
 
 func createLogsDir(logsDir string) error {
-	oldMask := syscall.Umask(0000)
-	if err := os.MkdirAll(logsDir, 0766); err != nil {
+	oldMask := syscall.Umask(0o000)
+	if err := os.MkdirAll(logsDir, 0o766); err != nil {
 		return err
 	}
 	syscall.Umask(oldMask)

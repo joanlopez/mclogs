@@ -15,7 +15,7 @@ type Config struct {
 
 func DefaultConfig() Config {
 	return Config{
-		Format:    FormatJson,
+		Format:    FormatJSON,
 		Output:    "",
 		Lines:     100,
 		Bytes:     0,

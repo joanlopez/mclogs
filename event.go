@@ -6,9 +6,7 @@ import (
 	"github.com/mroth/weightedrand"
 )
 
-var (
-	eventPicker *weightedrand.Chooser
-)
+var eventPicker *weightedrand.Chooser
 
 func init() {
 	eventPicker, _ = weightedrand.NewChooser(

@@ -6,7 +6,7 @@ import (
 )
 
 var (
-	FormatJson   = Format("json")
+	FormatJSON   = Format("json")
 	FormatLogfmt = Format("logfmt")
 )
 
@@ -21,8 +21,8 @@ func NewFormat(f string) (Format, error) {
 
 	// Validate
 	switch f {
-	case FormatJson.String():
-		return FormatJson, nil
+	case FormatJSON.String():
+		return FormatJSON, nil
 	case FormatLogfmt.String():
 		return FormatLogfmt, nil
 	default:

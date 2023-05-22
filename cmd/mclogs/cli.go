@@ -1,14 +1,15 @@
 package main
 
-// TODO: Configure linter imports
+// TODO: Configure linter imports.
 import (
 	"fmt"
 
 	"github.com/spf13/pflag"
 )
 
-const version = "0.1.0"
-const usage = `mclogs is a fake log generator
+const (
+	version = "0.1.0"
+	usage   = `mclogs is a fake log generator
 
 Usage: mclogs [options]
 
@@ -29,6 +30,7 @@ Options:
   -w, --overwrite          overwrite the existing log files.
   -l, --loop               loop output forever until killed.
 `
+)
 
 func init() {
 	pflag.Usage = printUsage
