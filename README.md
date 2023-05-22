@@ -3,7 +3,6 @@
 ![Github Action](https://github.com/joanlopez/mclogs/actions/workflows/test-and-build.yml/badge.svg?branch=main)
 [![Version](https://img.shields.io/github/release/joanlopez/mclogs.svg?style=flat-square)](https://github.com/joanlopez/mclogs/releases/latest)
 [![Go Report Card](https://goreportcard.com/badge/github.com/joanlopez/mclogs)](https://goreportcard.com/report/github.com/joanlopez/mclogs)
-[![Docker Pulls](https://img.shields.io/docker/pulls/joanlopez/mclogs.svg)](https://hub.docker.com/r/joanlopez/mclogs)
 
 mclogs is a fake log generator, heavily inspired on [flog](https://github.com/mingrammer/flog) ❤️, with a wink to [McDonald's](https://mcdonalds.com/), and support for common log formats json and logfmt.
 

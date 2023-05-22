@@ -1,0 +1,29 @@
+project_name: mclogs
+
+builds:
+  - main: ./cmd/mclogs/*.go
+    goos:
+      - darwin
+      - linux
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    ignore:
+      - goos: linux
+        goarch: arm64
+      - goos: windows
+        goarch: arm64
+
+archives:
+  - format: tar.gz
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
+    files:
+      - LICENSE
+      - README.md
+
+release:
+  github:
+    owner: joanlopez
+    name: mclogs
+  name_template: '{{.Tag}}'

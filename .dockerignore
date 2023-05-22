@@ -1,0 +1,11 @@
+.git
+.idea
+.vscode
+.gitignore
+.dockerignore
+.goreleaser.yml
+*.md
+dist
+formula
+vendor
+Dockerfile
