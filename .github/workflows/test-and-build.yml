@@ -1,23 +1,37 @@
-name: golangci-lint
+name: Test & Build
 
 on:
   push:
-    tags:
-      - v*
     branches:
       - main
   pull_request:
 
-permissions:
-  contents: read
-
 jobs:
-  golangci:
+
+  build:
+    name: build
     strategy:
       matrix:
         go: ['1.20']
         os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/setup-go@v4
+        with:
+          go-version: ${{ matrix.go }}
+          cache: false
+      - uses: actions/checkout@v3
+      - name: Run 'go test'
+        run: go test -race -count=1 ./...
+      - name: Run 'go build'
+        run: go build -race cmd/mclogs/*.go
+
+  golangci:
     name: lint
+    strategy:
+      matrix:
+        go: ['1.20']
+        os: [ubuntu-latest, macos-latest, windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/setup-go@v4
