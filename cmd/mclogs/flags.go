@@ -9,6 +9,10 @@ import (
 	"github.com/joanlopez/mclogs"
 )
 
+const (
+	timeFormat = time.RFC3339
+)
+
 func configFromFlags() mclogs.Config {
 	cfg := mclogs.DefaultConfig()
 
@@ -20,6 +24,7 @@ func configFromFlags() mclogs.Config {
 	bytesF := pflag.IntP("bytes", "b", cfg.Bytes, "")
 	sleepF := pflag.StringP("sleep", "s", "0s", "")
 	delayF := pflag.StringP("delay", "d", "0s", "")
+	atF := pflag.StringP("at", "a", cfg.At.Format(timeFormat), "")
 	overwriteF := pflag.BoolP("overwrite", "w", false, "")
 	foreverF := pflag.BoolP("loop", "l", false, "")
 
@@ -40,6 +45,7 @@ func configFromFlags() mclogs.Config {
 	captureBytes(&cfg, *bytesF)
 	captureSleep(&cfg, *sleepF)
 	captureDelay(&cfg, *delayF)
+	captureAt(&cfg, *atF)
 	captureOutput(&cfg, *outputF)
 	captureOverwrite(&cfg, *overwriteF)
 	captureForever(&cfg, *foreverF)
@@ -80,6 +86,13 @@ func captureSleep(cfg *mclogs.Config, sleep string) {
 func captureDelay(cfg *mclogs.Config, delay string) {
 	var err error
 	if cfg.Delay, err = time.ParseDuration(delay); err != nil {
+		panic(err)
+	}
+}
+
+func captureAt(cfg *mclogs.Config, at string) {
+	var err error
+	if cfg.At, err = time.Parse(timeFormat, at); err != nil {
 		panic(err)
 	}
 }

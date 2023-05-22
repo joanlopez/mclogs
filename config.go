@@ -9,6 +9,7 @@ type Config struct {
 	Bytes     int
 	Sleep     time.Duration
 	Delay     time.Duration
+	At        time.Time
 	Overwrite bool
 	Forever   bool
 }
@@ -21,6 +22,7 @@ func DefaultConfig() Config {
 		Bytes:     0,
 		Sleep:     0,
 		Delay:     0,
+		At:        time.Now(),
 		Overwrite: false,
 		Forever:   false,
 	}

@@ -21,7 +21,6 @@ func Generate(cfg Config) error {
 		}
 	}()
 
-	// TODO: Handle CTRL+C
 	generateLoop(cfg, writer)
 
 	return nil
@@ -29,8 +28,6 @@ func Generate(cfg Config) error {
 
 func generateLoop(cfg Config, writer io.WriteCloser) {
 	var (
-		// TODO: Make 'at' configurable
-		at      = time.Now()
 		written struct {
 			bytes int
 			lines int
@@ -59,12 +56,12 @@ func generateLoop(cfg Config, writer io.WriteCloser) {
 		}
 
 		time.Sleep(delay)
-		log := NewLog(cfg.Format, at)
+		log := NewLog(cfg.Format, cfg.At)
 		_, _ = writer.Write([]byte(log + "\n"))
 
 		written.lines++
 		written.bytes += len(log)
-		at = at.Add(interval)
+		cfg.At = cfg.At.Add(interval)
 	}
 }
 
